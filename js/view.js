@@ -5,6 +5,7 @@ function changeVisibility(divisionName,visibility) {
     
 } 
 
+
 var question = document.getElementById("questionselector");
 var user = document.getElementById("userselector");
 var score = document.getElementById("scoreselector");
@@ -17,6 +18,23 @@ var subjectDropDown = document.getElementById("subjectDropDown");
 var questionType = "";
 
 var xmlHttp=new XMLHttpRequest();
+
+
+function deleteUser(deleted,table_name){
+    console.log("id is "+deleted);
+    var result=window.confirm("Are you sure to delete id : "+deleted);
+    if (result)
+    {
+        xmlHttp.onreadystatechange = function(){
+            if (this.readyState == 4 && this.status == 200){
+                console.log(this.responseText);
+            }
+        };
+        
+        xmlHttp.open("GET","../scripts/deletethings.php?id="+deleted+"&table="+table_name,true);  
+        xmlHttp.send();
+    }
+}
 
 function onViewSelected(){
     changeVisibility("subjectSelector","none");

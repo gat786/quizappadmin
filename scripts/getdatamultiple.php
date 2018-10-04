@@ -23,19 +23,23 @@
             <th>Option 2</th>
             <th>Option 3</th>
             <th>Answer</th>
+            <th>Select</th>
             </tr>
             ";
     
     if ($result->num_rows > 0) {
         // output data of each row
         while($row = $result->fetch_assoc()) {
+            $id=$row["id"];
+            $random="fuckthis";
             echo "<td>" . $row["id"].
                     "</td><td>" . $row["question"]. 
                     "</td><td>" . $row["option1"]. 
                     "</td><td>" . $row["option2"]. 
                     "</td><td>" . $row["option3"]. 
                     "</td><td>" . $row["answer"]. 
-                    "</td></tr>"  ;
+                    "</td><td><input type=\"button\" value=\"delete\" onclick=\"deleteUser($id,$q)\">".
+                    "</td></tr>" . ""  ;
         }
     } else {
         echo "0 results";

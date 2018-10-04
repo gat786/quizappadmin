@@ -20,15 +20,18 @@
             <th>Id</th>
             <th>Question</th>
             <th>Answer</th>
+            <th>Select</th>
             </tr>
             ";
     
     if ($result->num_rows > 0) {
         // output data of each row
         while($row = $result->fetch_assoc()) {
+            $id=$row["id"];
             echo "<td>" . $row["id"].
                     "</td><td>" . $row["question"]. 
                     "</td><td>" . $row["answer"]. 
+                    "</td><td><input type=\"button\" value=\"delete\" onclick=\"deleteUser($id,$q)\">".
                     "</td></tr>"  ;
         }
     } else {

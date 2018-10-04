@@ -48,7 +48,7 @@
 
     <div id="recievedData"></div>
 
-    <script src="../js/javascript.js"></script>   
+    <script src="../js/view.js"></script>   
      
 
 </body>
