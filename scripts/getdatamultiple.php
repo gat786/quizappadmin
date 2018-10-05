@@ -31,14 +31,13 @@
         // output data of each row
         while($row = $result->fetch_assoc()) {
             $id=$row["id"];
-            $random="fuckthis";
-            echo "<td>" . $row["id"].
+            echo "<tr><td>" . $row["id"].
                     "</td><td>" . $row["question"]. 
                     "</td><td>" . $row["option1"]. 
                     "</td><td>" . $row["option2"]. 
                     "</td><td>" . $row["option3"]. 
                     "</td><td>" . $row["answer"]. 
-                    "</td><td><input type=\"button\" value=\"delete\" onclick=\"deleteUser($id,$q)\">".
+                    "</td><td><input type=\"button\" value=\"delete\" onclick=\"deleteUser($id,'$q')\">".
                     "</td></tr>" . ""  ;
         }
     } else {

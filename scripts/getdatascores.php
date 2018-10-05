@@ -28,11 +28,11 @@
         // output data of each row
         while($row = $result->fetch_assoc()) {
             $id=$row["id"];
-            $table_name="score";
-            echo "<td>" . $row["id"].
+            $table_name='score';
+            echo "<tr> <td>" . $row["id"].
                     "</td><td>" . $row["username"]. 
                     "</td><td>" . $row["user_score"]. 
-                    "</td><td><input type=\"button\" value=\"delete\" onclick=\"deleteUser($id,$table_name)\">". 
+                    "</td><td><input type=button value=\"delete\" onclick=\"deleteUser($id,'$table_name')\" >". 
                     "</td></tr>"  ;
         }
     } else {

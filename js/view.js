@@ -20,8 +20,10 @@ var questionType = "";
 var xmlHttp=new XMLHttpRequest();
 
 
+
 function deleteUser(deleted,table_name){
     console.log("id is "+deleted);
+    console.log("table name is "+table_name);
     var result=window.confirm("Are you sure to delete id : "+deleted);
     if (result)
     {

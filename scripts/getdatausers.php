@@ -31,7 +31,7 @@
             echo "<td>" . $row["id"].
                     "</td><td>" . $row["username"]. 
                     "</td><td>" . $row["email"]. 
-                    "</td><td><input type=\"button\" value=\"delete\" onclick=\"deleteUser($id,$q)\">".
+                    "</td><td><input type=\"button\" value=\"delete\" onclick=\"deleteUser($id,'$q')\">".
                     "</td></tr>"  ;
         }
     } else {
