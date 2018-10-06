@@ -1,16 +1,6 @@
 <?php
-    $q=$_REQUEST["q"];
-
-    $servername = "localhost";
-    $username = "ganesh";
-    $password = "123456";
-
-    $conn = new mysqli($servername,$username,$password,"trivia_db");
-
-    if($conn->connect_error)
-    {
-        die("Connection Failed".$conn->connect_error);
-    }
+    include "config.php";
+    $q=$_GET["q"];
 
     echo "$q";
     $sql="select * from $q";
@@ -20,7 +10,8 @@
             <th>Id</th>
             <th>Question</th>
             <th>Answer</th>
-            <th>Select</th>
+            <th>Delete</th>
+            <th>Update</th>
             </tr>
             ";
     
@@ -31,7 +22,8 @@
             echo "<tr><td>" . $row["id"].
                     "</td><td>" . $row["question"]. 
                     "</td><td>" . $row["answer"]. 
-                    "</td><td><input type=\"button\" value=\"delete\" onclick=\"deleteUser($id,'$q')\">".
+                    "</td><td><input type=\"button\" value=\"Delete\" onclick=\"deleteUser($id,'$q')\">".
+                    "</td><td><input type=\"button\" value=\"Update\" onclick=\"updateBooleanModalDisplay($id,'$q')\">".
                     "</td></tr>"  ;
         }
     } else {
