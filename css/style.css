@@ -9,6 +9,23 @@
     left: 0;
 }
 
+#viewAddButtons{
+    padding: 2rem
+}
+
+#viewAddButtonsScores{
+    padding: 2rem
+}
+
+td{
+    border: 1px black;
+    padding: 2rem;
+}
+
+table,th,td{
+    border-width: 1px black;
+}
+
 .w3-modal-content
 {
     top: 50%;

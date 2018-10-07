@@ -23,10 +23,18 @@
             <input type="text" name="" id="emailEntry">
         </td>
     </tr>
+    <tr>
+        <td>
+            Password
+        </td>
+        <td>
+            <input type="password" name="" id="passwordEntry">
+        </td>
+    </tr>
     
     <tr>
         <td colspan="2">
-            <button onclick="userModalSubmit()">Update</button>
+            <button onclick="userModalSubmit()">Continue</button>
         </td>
     </tr>
 </table>

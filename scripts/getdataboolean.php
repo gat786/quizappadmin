@@ -23,7 +23,7 @@
                     "</td><td>" . $row["question"]. 
                     "</td><td>" . $row["answer"]. 
                     "</td><td><input type=\"button\" value=\"Delete\" onclick=\"deleteUser($id,'$q')\">".
-                    "</td><td><input type=\"button\" value=\"Update\" onclick=\"updateBooleanModalDisplay($id,'$q')\">".
+                    "</td><td><input type=\"button\" value=\"Update\" onclick=\"updateBooleanModalDisplay($id,'$q','update')\">".
                     "</td></tr>"  ;
         }
     } else {

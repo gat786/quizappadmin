@@ -26,13 +26,12 @@
 
                 <div id="viewAddButtons" style="display:none">
                     <button type="button" onclick="viewUsers()"> View </button>
-                    <button type="button"> Add </button>
+                    <button type="button" onclick="addUsers()"> Add </button>
                 </div>
 
                 
                 <div id="viewAddButtonsScores" style="display:none">
                     <button type="button" onclick="viewScores()"> View </button>
-                    <button type="button"> Add </button>
                 </div>
             </td>
                 
@@ -58,7 +57,8 @@
                         <option value="films">Films</option>
                         <option value="sports">Sports</option>
                     </select>
-                    <input type="button" value="Go.!" onclick="onSubjectSelected()">
+                    <input type="button" value="View" onclick="onSubjectSelected()">
+                    <button onclick="addQuestions()">Add</button>
                 </span>
             </td>
         </tr>
@@ -68,7 +68,7 @@
 
     <div id="updateUser" class="w3-modal" style="display:none">
         <div class="w3-modal-content">
-            <div class="w3-container">
+            <div class="w3-container w3-background">
                 <a onclick="document.getElementById('updateUser').style.display='none'" class="w3-button">&times;</a>
                 <?php
                     include "./html/usersUpdate.php";
@@ -90,7 +90,7 @@
 
     <div id="updateBoolean" class="w3-modal" style="display:none">
         <div class="w3-modal-content">
-            <div class="w3-container">
+            <div class="w3-container w3-background">
                 <span onclick="document.getElementById('updateBoolean').style.display='none'" class="w3-button w3-display-topright">&times;</span>
                 <?php
                     include "./html/booleanUpdate.php";

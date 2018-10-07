@@ -23,7 +23,7 @@
                     "</td><td>" . $row["username"]. 
                     "</td><td>" . $row["email"]. 
                     "</td><td><input type=\"button\" value=\"Delete\" onclick=\"deleteUser($id,'$q')\">".
-                    "</td><td><input type=\"button\" value=\"Update\" onclick=\"updateUserModalDisplay($id,'$table_name')\">".
+                    "</td><td><input type=\"button\" value=\"Update\" onclick=\"updateUserModalDisplay($id,'$table_name','update')\">".
                     "</td></tr>"  ;
         }
     } else {

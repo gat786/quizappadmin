@@ -12,7 +12,7 @@
                 Question
             </td>
             <td>
-                <input type="text" name="" id="questionEntry">
+                <textarea name="" id="booleanQuestionEntry" cols="30" rows="3" required></textarea>
             </td>
         </tr>
         <tr>
@@ -28,7 +28,7 @@
         </tr>
         <tr>
             <td colspan="2">
-                <button onclick="multipleModalSubmit()">Update</button>
+                <button onclick="booleanModalSubmit()">Continue</button>
             </td>
         </tr>
     </table>

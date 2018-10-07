@@ -33,8 +33,7 @@
                     "</td><td>" . $row["option3"]. 
                     "</td><td>" . $row["answer"]. 
                     "</td><td><input type=\"button\" value=\"Delete\" onclick=\"deleteUser($id,'$q')\">".
-                    "</td><td><input type=\"button\" value=\"Update\" 
-                        onclick=\"updateMultipleModalDisplay($id,'$q','$question','$op1','$op2','$op3','$answer')\">".
+                    "</td><td><input type=\"button\" value=\"Update\" onclick=\"updateMultipleModalDisplay($id,'$q','update')\">".
                     "</td></tr>" . ""  ;
         }
     } else {
