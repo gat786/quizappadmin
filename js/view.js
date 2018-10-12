@@ -125,13 +125,15 @@ function deleteUser(deleted,table_name){
 }
 
 function viewUsers(){
-    changeVisibility("recievedData","block");
+    changeVisibility("loader","block");
     changeVisibility("questionTypeSelector","none");
     changeVisibility("subjectSelector","none");
     console.log("getting usersdata");
     xmlHttp.onreadystatechange = function(){
         if (this.readyState == 4 && this.status == 200){
             document.getElementById("recievedData").innerHTML=this.responseText;
+            changeVisibility("loader","none");
+            changeVisibility("recievedData","block");
         }
     };
     
@@ -140,13 +142,15 @@ function viewUsers(){
 }
 
 function viewScores(){
-    changeVisibility("recievedData","block");
+    changeVisibility("loader","block");
     changeVisibility("questionTypeSelector","none");
     changeVisibility("subjectSelector","none");
     console.log("getting scoresdata");
     xmlHttp.onreadystatechange = function(){
         if (this.readyState == 4 && this.status == 200){
             document.getElementById("recievedData").innerHTML=this.responseText;
+            changeVisibility("loader","none");
+            changeVisibility("recievedData","block");
         }
     };
     
@@ -292,13 +296,15 @@ function onSubjectSelected(){
 
     var subject=subjectDropDown.options[subjectDropDown.selectedIndex].value;
 
-    changeVisibility("recievedData","block");
+    changeVisibility("loader","block");
 
     if (mcq.checked)
     {   
         xmlHttp.onreadystatechange = function(){
             if (this.readyState == 4 && this.status == 200){
                 document.getElementById("recievedData").innerHTML=this.responseText;
+                changeVisibility("loader","none");
+                changeVisibility("recievedData","block");
             }
         };
 
@@ -311,6 +317,8 @@ function onSubjectSelected(){
         xmlHttp.onreadystatechange = function(){
             if (this.readyState == 4 && this.status == 200){
                 document.getElementById("recievedData").innerHTML=this.responseText;
+                changeVisibility("loader","none");
+                changeVisibility("recievedData","block");
             }
         };
         

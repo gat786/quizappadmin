@@ -20,7 +20,7 @@
             $table_name='score';
             echo "<tr> <td>" . $row["id"].
                     "</td><td>" . $row["username"]. 
-                    "</td><td>" . $row["user_score"]. 
+                    "</td><td>" . $row["score"]. 
                     "</td><td><input type=button value=\"Delete\" onclick=\"deleteUser($id,'$table_name')\" >". 
                     "</td></tr>"  ;
         }

@@ -9,62 +9,69 @@
 </head>
 <body>
 
-    <table>
-        <tr>
-            <td>
-                <span id="viewTypeSelector">
-                    <label>
-                    <input type="radio" onclick="questionChecked()" name="view" id="questionselector"> Questions <br/>
-                    </label>
-                    <label>
-                    <input type="radio" name="view" onclick="userChecked()" id="userselector"> Users <br/>
-                    </label>
-                    <label>
-                    <input type="radio" name="view" onclick="scoreChecked()" id="scoreselector"> Scores <br/>
-                    </label>
-                </span>
+    <div id="loader"></div>
+    <div class="header text-center">
+        <h1 class="header-text">Quiz App Admin Panel</h1>
+    </div>
+    <div class="center-selector">
+        <table id="center-table">
+            <tr>
+                <td>
+                    <span id="viewTypeSelector">
+                        <label>
+                        <input type="radio" onclick="questionChecked()" name="view" id="questionselector"> Questions <br/>
+                        </label>
+                        <label>
+                        <input type="radio" name="view" onclick="userChecked()" id="userselector"> Users <br/>
+                        </label>
+                        <label>
+                        <input type="radio" name="view" onclick="scoreChecked()" id="scoreselector"> Scores <br/>
+                        </label>
+                    </span>
 
-                <div id="viewAddButtons" style="display:none">
-                    <button type="button" onclick="viewUsers()"> View </button>
-                    <button type="button" onclick="addUsers()"> Add </button>
-                </div>
+                    <div id="viewAddButtons" style="display:none">
+                        <button type="button" onclick="viewUsers()"> View </button>
+                        <button type="button" onclick="addUsers()"> Add </button>
+                    </div>
 
-                
-                <div id="viewAddButtonsScores" style="display:none">
-                    <button type="button" onclick="viewScores()"> View </button>
-                </div>
-            </td>
-                
-            <td>
-                <span id="questionTypeSelector" style="display:none">
-                    <label>
-                        <input type="radio" name="question" onclick="onTypeSelected()" id="mcqselector"> MCQ <br/>
-                    </label>
-                    <label>
-                        <input type="radio" name="question"onclick="onTypeSelected()" id="truefalseselector"> True or False <br/>
-                    </label>
-                </span>
-            </td>
-        
-            <td> 
-                <span id="subjectSelector" style="display:none">
-                    <select name="subjects" id="subjectDropDown">
-                        <option value="science">Science</option>
-                        <option value="geography">Geography</option>
-                        <option value="history">History</option>
-                        <option value="mythology">Mythology</option>
-                        <option value="computers">Computer Science</option>
-                        <option value="films">Films</option>
-                        <option value="sports">Sports</option>
-                    </select>
-                    <input type="button" value="View" onclick="onSubjectSelected()">
-                    <button onclick="addQuestions()">Add</button>
-                </span>
-            </td>
-        </tr>
-    </table>
-    
+                    
+                    <div id="viewAddButtonsScores" style="display:none">
+                        <button type="button" onclick="viewScores()"> View </button>
+                    </div>
+                </td>
+                    
+                <td>
+                    <span id="questionTypeSelector" style="display:none">
+                        <label>
+                            <input type="radio" name="question" onclick="onTypeSelected()" id="mcqselector"> MCQ <br/>
+                        </label>
+                        <label>
+                            <input type="radio" name="question"onclick="onTypeSelected()" id="truefalseselector"> True or False <br/>
+                        </label>
+                    </span>
+                </td>
+            
+                <td> 
+                    <span id="subjectSelector" style="display:none">
+                        <select name="subjects" id="subjectDropDown">
+                            <option value="science">Science</option>
+                            <option value="geography">Geography</option>
+                            <option value="history">History</option>
+                            <option value="mythology">Mythology</option>
+                            <option value="computers">Computer Science</option>
+                            <option value="films">Films</option>
+                            <option value="sports">Sports</option>
+                        </select>
+                        <input type="button" value="View" onclick="onSubjectSelected()">
+                        <button onclick="addQuestions()">Add</button>
+                    </span>
+                </td>
+            </tr>
+        </table>
+    </div>
     <br/>
+
+    
 
     <div id="updateUser" class="w3-modal" style="display:none">
         <div class="w3-modal-content">
@@ -99,7 +106,7 @@
         </div>
     </div>
 
-    <div id="recievedData"></div>
+    <div class="text-center" id="recievedData"></div>
 
     <script src="../js/view.js"></script>   
      

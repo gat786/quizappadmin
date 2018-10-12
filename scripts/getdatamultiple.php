@@ -39,7 +39,5 @@
     } else {
         echo "0 results";
     }
-
     echo "</table>"
-
 ?>
