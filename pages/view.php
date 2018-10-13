@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>View Page</title>
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"> 
-    <link href="https://fonts.googleapis.com/css?family=Niramit" rel="stylesheet"> 
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
