@@ -1,3 +1,8 @@
+*{
+    margin: 0%;
+    padding: 0%
+}
+
 .w3-modal
 {
     position: fixed;
@@ -9,11 +14,14 @@
     left: 0;
 }
 
-.header{
-    background-color: #e74c3c;
+.loader-holder
+{
+    display: block;
     width: 100%;
-    height: 4rem;
+    height: 100%;
 }
+
+
 
 .loader {
     border: 16px solid #f3f3f3; /* Light grey */
@@ -24,13 +32,10 @@
     animation: spin 2s linear infinite;
 }
 
-.center-selector{
-    margin: 0 auto;
-    width: 100%;
-}
 
 .center-table{
     align-self: center;
+    border: 0px;
 }
 
 @keyframes spin {
@@ -42,21 +47,91 @@
     text-align: center;
 }
 
+.center-selector-holder{
+    width: 100%;
+    height: 8rem;
+    align-items: center;
+    color: #3498db;
+    background-color: azure;
+}
+
+.center-selector{
+    align-self: center;
+}
+
+.header{
+    background-color: #e74c3c;
+    width: 100%;
+    height: 6rem;
+    display: table;
+}
+
 .header-text{
     color: aliceblue;
+    font-family: 'Lato';
+    display: table-cell;
+    vertical-align: middle;
 }
 
 #viewAddButtons{
-    padding: 2rem
+    padding: 1rem
+}
+
+.data-returned{
+    align-self: center;
+}
+
+.data-recieved-holder{
+    display: table;
+}
+
+button{
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 5px 10px;
+        text-align: center;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 13px;
+        border-radius: 4px;
+}
+
+.radio{
+    cursor: pointer;
+}
+
+.table-data{
+    height: 4rem;
+}
+
+#update{
+    background-color: #38ada9;
+    border-radius: 4px;
+}
+
+#delete{
+    background-color: #eb2f06;
+    border-radius: 4px;
 }
 
 #viewAddButtonsScores{
-    padding: 2rem
+    padding: 1rem
 }
 
 td{
     border: 1px black;
-    align-self: center;
+}
+
+.table-data:hover{ background-color: #f5f5f5; }
+tr:nth-child(even) {background-color: #f2f2f2;}
+
+
+th,td{
+    padding: 15px;
+    text-align: left;
+    
 }
 
 table,th,td{
