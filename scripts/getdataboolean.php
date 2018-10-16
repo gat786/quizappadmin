@@ -6,7 +6,7 @@
     $sql="select * from $q";
 
     $result=$conn->query($sql);
-    echo "<table> <tr>
+    echo "<table class=\"data-returned\" style=\"display:block\"> <tr>
             <th>Id</th>
             <th>Question</th>
             <th>Answer</th>
@@ -34,6 +34,6 @@
         echo "0 results";
     }
 
-    echo "</table>"
+    echo "</table>";
 
 ?>

@@ -16,6 +16,12 @@ select{
     color: #2c3e50;
 }
 
+.icon{
+    color: #ecf0f1;
+    cursor: pointer;
+    padding: 20px;
+}
+
 .login-input{
     margin-top: 2rem;
     margin-right: 2rem;
@@ -133,10 +139,19 @@ input{
     display: table;
 }
 
+.log-out-button{
+    height: 50px;
+    width: 50px;
+    color: #ffffff;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
 button{
         background-color: #4CAF50; /* Green */
         border: none;
         color: white;
+        margin: 10px;
         padding: 5px 10px;
         text-align: center;
         cursor: pointer;

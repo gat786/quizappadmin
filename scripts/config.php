@@ -1,8 +1,8 @@
 <?php
 
-    $servername = "*.*.*.*";
-    $username = "*";
-    $password = "*";
+    $servername = "159.89.161.122";
+    $username = "ganesh";
+    $password = "hotMAIL123@";
 
     $conn = new mysqli($servername,$username,$password,"trivia_db");
 

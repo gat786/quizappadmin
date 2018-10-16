@@ -5,10 +5,15 @@ function changeVisibility(divisionName,visibility) {
     
 } 
 
+function logout(){
+    console.log("Logging out");
+}
+
 
 var question = document.getElementById("questionselector");
 var user = document.getElementById("userselector");
 var score = document.getElementById("scoreselector");
+var suggestion = document.getElementById("suggestionselector");
 
 var mcq=document.getElementById("mcqselector");
 var booleanQ=document.getElementById("truefalseselector");
@@ -26,6 +31,37 @@ var booleanModal = document.getElementById("updateBoolean");
 var buttonsView = document.getElementById("viewButtons");
 var id = null;
 var table_name="";
+var suggestionSelector = false;
+
+function suggestionChecked()
+{
+    console.log("see suggestions logged");
+    changeVisibility("recievedData","none");
+    changeVisibility("viewAddButtons","none");
+    changeVisibility("viewAddButtonsScores","none");
+    suggestionSelector = true;
+    onViewSelected();
+}
+
+function viewSuggestions(){
+    changeVisibility("loader","block");
+    changeVisibility("questionTypeSelector","none");
+    console.log("getting suggestions");
+
+    xmlHttp.onreadystatechange = function(){
+        if (this.readyState == 4 && this.status == 200){
+            document.getElementById("recievedData").innerHTML=this.responseText;
+            changeVisibility("loader","none");
+            changeVisibility("recievedData","block");
+        }
+    };
+    
+    xmlHttp.open("GET","../scripts/getsuggestions.php?type="+questionType,true);  
+    xmlHttp.send();
+}
+
+
+
 
 function updateUserModalDisplay(id,table_name,typerequest)
 {
@@ -41,6 +77,7 @@ function questionChecked(){
     console.log("checked question radio");
     changeVisibility("viewAddButtons","none");
     changeVisibility("viewAddButtonsScores","none");
+    changeVisibility("viewButtonSuggestion","none");
     onViewSelected();
 }
 
@@ -51,6 +88,7 @@ function scoreChecked(){
     changeVisibility("viewAddButtons","none");
     changeVisibility("questionTypeSelector","none");
     changeVisibility("recievedData","none");
+    changeVisibility("viewButtonSuggestion","none");
     changeVisibility("subjectSelector","none");
 }
 
@@ -60,6 +98,7 @@ function userChecked(){
     changeVisibility("viewAddButtons","block");
     changeVisibility("questionTypeSelector","none");
     changeVisibility("recievedData","none");
+    changeVisibility("viewButtonSuggestion","none");
     changeVisibility("subjectSelector","none");
 }
 
@@ -287,8 +326,15 @@ function onTypeSelected(){
     else{
         questionType = "boolean";
     }
-    changeVisibility("subjectSelector","block");
-    changeVisibility("recievedData","none");
+    if(question.checked)
+    {
+        changeVisibility("subjectSelector","block");
+        changeVisibility("recievedData","none");
+    }
+    else if(suggestion.checked)
+    {
+        changeVisibility("viewButtonSuggestion","block");
+    }
 }
 
 function onSubjectSelected(){

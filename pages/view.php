@@ -13,6 +13,7 @@
     
     <div class="header text-center">
         <h1 class="header-text">Quiz App Admin Panel</h1>
+        <img src="../img/sign-out-alt.svg" class="log-out-button" onclick="logout()"></i>
     </div>
     <div class="center-selector-holder">
         <div class="center-selector">
@@ -29,6 +30,9 @@
                             <label class="radio">
                             <input type="radio" name="view" onclick="scoreChecked()" class="radio" id="scoreselector"> Scores <br/>
                             </label>
+                            <label class="radio">
+                            <input type="radio" name="view" onclick="suggestionChecked()" class="radio" id="suggestionselector"> Suggestion <br/>
+                            </label>
                         </span>
 
                         <div id="viewAddButtons" style="display:none">
@@ -39,6 +43,11 @@
                         
                         <div id="viewAddButtonsScores" style="display:none">
                             <button type="button" onclick="viewScores()"> View </button>
+                        </div>
+
+                        
+                        <div id="viewButtonSuggestion" style="display:none">
+                            <button type="button" onclick="viewSuggestions()"> View </button>
                         </div>
                     </td>
                         
