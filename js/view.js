@@ -23,6 +23,7 @@ var subjectDropDown = document.getElementById("subjectDropDown");
 var questionType = "";
 
 var xmlHttp=new XMLHttpRequest();
+var xmlHttp2=new XMLHttpRequest();
 
 var usersModal = document.getElementById("updateUser");
 var multipleModal = document.getElementById("updateMultiple");
@@ -371,4 +372,53 @@ function onSubjectSelected(){
         xmlHttp.open("GET","../scripts/getdataboolean.php?q="+subject+"_boolean",true);  
         xmlHttp.send();
     }
+}
+
+function addQuestionMultipleSuggestion(table_name,question,answer,option1,option2,option3,id){
+    xmlHttp.onreadystatechange = function(){
+        if (this.readyState == 4 && this.status == 200){
+            document.getElementById("recievedData").innerHTML=this.responseText;
+            changeVisibility("loader","none");
+            changeVisibility("recievedData","block");
+        }
+    };
+    
+    xmlHttp.open("GET","../scripts/addthings.php?table="+table_name+"_easy_multiple&question="+question+"&answer="+answer+
+                "&option1="+option1+"&option2="+option2+"&option3="+option3+"&type=suggestion&qtype=multiple",true);  
+    xmlHttp.send();
+
+    
+    xmlHttp2.onreadystatechange = function(){
+        if (this.readyState == 4 && this.status == 200){
+            document.getElementById("recievedData").innerHTML+=this.responseText;
+        }
+    };
+    
+    xmlHttp2.open("GET","../scripts/deletethings.php?table="+table_name+"_easy_multiple&id="+id,true);  
+    xmlHttp2.send();
+}
+
+function addQuestionBooleanSuggestion(table_name,question,answer,id){
+    xmlHttp.onreadystatechange = function(){
+        if (this.readyState == 4 && this.status == 200){
+            document.getElementById("recievedData").innerHTML=this.responseText;
+        }
+    };
+    
+    xmlHttp.open("GET","../scripts/addthings.php?table="+table_name+"_boolean&question="+question+"&answer="+answer+
+                "&type=suggestion&qtype=boolean",true);  
+    xmlHttp.send();
+
+    xmlHttp2.onreadystatechange = function(){
+        if (this.readyState == 4 && this.status == 200){
+            document.getElementById("recievedData").innerHTML+=this.responseText;
+            changeVisibility("loader","none");
+            changeVisibility("recievedData","block");
+        }
+    };
+    
+    xmlHttp2.open("GET","../scripts/deletethings.php?table="+table_name+"_boolean&id="+id,true);  
+    xmlHttp2.send();
+    
+
 }

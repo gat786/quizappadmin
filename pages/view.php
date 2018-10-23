@@ -82,7 +82,7 @@
         </div>
     </div>
     <br/>
-    <div id="loader-holder">
+    <div class="data-recieved-holder" id="loader-holder">
         <div class="loader" style="display:none;" id="loader"></div>
     </div>
 

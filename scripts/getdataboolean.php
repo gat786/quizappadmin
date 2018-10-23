@@ -2,11 +2,13 @@
     include "config.php";
     $q=$_GET["q"];
 
-    echo "$q";
     $sql="select * from $q";
+    ?>
+<div class="data-returned">
+<?php
 
     $result=$conn->query($sql);
-    echo "<table class=\"data-returned\" style=\"display:block\"> <tr>
+    echo "<table> <tr>
             <th>Id</th>
             <th>Question</th>
             <th>Answer</th>
@@ -37,3 +39,4 @@
     echo "</table>";
 
 ?>
+</div>

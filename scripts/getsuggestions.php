@@ -1,15 +1,20 @@
+
+
 <?php 
     include "./config.php";
     $type="";
     $type=$_GET["type"];
 
     if ($type==="boolean"){
-        echo "boolean selected";
         $q="suggestsingle";
         $sql="select * from $q";
+?>
 
+<div class="data-returned">
+
+<?php
         $result=$conn->query($sql);
-        echo "<table class=\"data-returned\" style=\"display:block\"> <tr>
+        echo "<table> <tr>
                 <th>Id</th>
                 <th>Question</th>
                 <th>Answer</th>
@@ -26,13 +31,19 @@
         if ($result->num_rows > 0) {
             // output data of each row
             while($row = $result->fetch_assoc()) {
+                $subject_name=$row["subject"];
+                $answer=$row["answer"];
+                $question=$row["question"];
                 $id=$row["id"];
                 echo "$tr $td" . $row["id"].
-                        "</td>$td" . $row["question"]. 
-                        "</td>$td" . $row["answer"]. 
-                        "</td>$td" . $row["subject"]. 
+                        "</td>$td" . $question. 
+                        "</td>$td" . $answer. 
+                        "</td>$td" . $subject_name. 
                         "</td>$td<button id=\"delete\" onclick=\"deleteUser($id,'$q')\"> Delete </button>".
-                        "</td>$td<button id=\"update\" onclick=\"addQuestion()\"> Add </button>".
+                        "</td>$td<button id=\"update\" onclick=\"addQuestionBooleanSuggestion(
+                            '$subject_name','$question','$answer','$id'
+                        )\">
+                         Add </button>".
                         "</td></tr>"  ;
             }
         } else {
@@ -43,12 +54,14 @@
     }
 
     else if($type==="multiple"){
-        echo "multiple selected";
         $q="suggestmultiple";
         $sql="select * from $q";
 
+        ?>
+        <div class="data-returned">
+<?php
         $result=$conn->query($sql);
-        echo "<table class=\"data-returned\" style=\"display:block\"> <tr>
+        echo "<table> <tr>
                 <th>Id</th>
                 <th>Question</th>
                 <th>Option 1</th>
@@ -72,15 +85,18 @@
                 $op1=$row["option1"];
                 $op2=$row["option2"];
                 $op3=$row["option3"];
+                $subject_name=$row["subject"];
                 echo "$tr $td" . $row["id"].
-                        "</td>$td" . $row["question"]. 
-                        "</td>$td" . $row["option1"]. 
-                        "</td>$td" . $row["option2"]. 
-                        "</td>$td" . $row["option3"]. 
-                        "</td>$td" . $row["answer"]. 
-                        "</td>$td" . $row["subject"]. 
+                        "</td>$td" . $question. 
+                        "</td>$td" . $op1. 
+                        "</td>$td" . $op2. 
+                        "</td>$td" . $op3. 
+                        "</td>$td" . $answer. 
+                        "</td>$td" . $subject_name. 
                         "</td>$td<button id=\"delete\" onclick=\"deleteUser($id,'$q')\"> Delete </button>".
-                        "</td>$td<button id=\"update\" onclick=\"addQuestion()\"> Add </button>".
+                        "</td>$td<button id=\"update\" onclick=\"addQuestionMultipleSuggestion(
+                            '$subject_name','$question','$answer','$op1','$op2','$op3','$id'
+                        )\"> Add </button>".
                         "</td></tr>" . ""  ;
             }
         } else {
@@ -89,3 +105,5 @@
         echo "</table>";
     }
 ?>
+
+</div>

@@ -1,8 +1,11 @@
 <?php
     include "config.php";
     $q=$_GET["q"];
-    echo "$q";
     $sql="select * from $q";
+    ?>
+
+    <div class="data-returned">
+    <?php
 
     $result=$conn->query($sql);
     echo "<table class=\"data-returned\" style=\"display:block\"> <tr>
@@ -43,3 +46,4 @@
     }
     echo "</table>";
 ?>
+</div>

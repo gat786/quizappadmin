@@ -1,8 +1,11 @@
 <?php
     include "./config.php";
     $q="users";
-    echo "$q";
     $sql="select * from $q";
+    ?>
+
+    <div class="data-returned">
+<?php
 
     $result=$conn->query($sql);
     echo "<table> <tr>
@@ -37,3 +40,4 @@
     echo "</table>"
 
 ?>
+</div>

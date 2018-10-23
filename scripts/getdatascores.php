@@ -1,8 +1,10 @@
 <?php
     include "config.php";
     $q="score";
-    echo "$q";
     $sql="select * from $q";
+    ?>
+    <div class="data-returned">
+<?php
 
     $result=$conn->query($sql);
     echo "<table> <tr>
@@ -35,3 +37,5 @@
     echo "</table>"
 
 ?>
+
+</div>

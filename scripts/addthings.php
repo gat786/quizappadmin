@@ -52,5 +52,40 @@
         else{
             echo "Insertion Failed " + $conn->error;
         }
+    }elseif($type=="suggestion"){
+        $qtype=$_GET["qtype"];
+        if($qtype=="boolean"){
+            $question=$_GET["question"];
+            $answer=$_GET["answer"];
+
+            $sql="insert into $table_name (question,answer) values ('$question','$answer')";
+
+            
+            if($conn->query($sql)===TRUE){
+                echo "Inserted Successfully";
+            }
+            else{
+                echo "Insertion Failed " + $conn->error;
+            }
+
+        }
+        elseif($qtype=="multiple"){
+            $question=$_GET["question"];
+            $option1=$_GET["option1"];
+            $option2=$_GET["option2"];
+            $option3=$_GET["option3"];
+            $answer=$_GET["answer"];
+
+            $sql="insert into $table_name (question,option1,option2,option3,answer)
+             values ('$question','$option1','$option2','$option3','$answer')";
+            
+            if($conn->query($sql)===TRUE){
+                echo "Inserted Successfully";
+            }
+            else{
+                echo "Insertion Failed " + $conn->error;
+            }
+
+        }
     }
 ?>
